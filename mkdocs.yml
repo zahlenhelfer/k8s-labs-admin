@@ -1,17 +1,17 @@
 site_name: k8s for Admins
 site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 nav:
-      - Home: index.md
-      - Setup Cluster:
-              - Getting Started: v2/getting-started.md
-              - Types:
-                      - Comments: v2/types/comments.md
-      - Install Ingress Controller:
-              - Types:
-                      - Comments: v1/types/comments.md
-                      - Posts: v1/types/posts.md
+        - Home: index.md
+        - Node-Setup:
+                  - Getting Started: setup/cluster.md
+                  - Types:
+                            - Ingress: setup/ingress.md
+        - Kubernetes-Essentials:
+                  - Storage:
+                            - Nfs: storage/nfs.md
+                            - HostPath: storage/hostpath.md
 
 theme: readthedocs
 plugins:
-      - search
-      - print-site
+        - search
+        - print-site
