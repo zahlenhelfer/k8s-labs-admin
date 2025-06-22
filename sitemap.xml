@@ -4,4 +4,20 @@
          <loc>https://zahlenhelfer.github.io/k8s-for-admins/</loc>
          <lastmod>2025-06-22</lastmod>
     </url>
+    <url>
+         <loc>https://zahlenhelfer.github.io/k8s-for-admins/setup/cluster/</loc>
+         <lastmod>2025-06-22</lastmod>
+    </url>
+    <url>
+         <loc>https://zahlenhelfer.github.io/k8s-for-admins/setup/ingress/</loc>
+         <lastmod>2025-06-22</lastmod>
+    </url>
+    <url>
+         <loc>https://zahlenhelfer.github.io/k8s-for-admins/storage/hostpath/</loc>
+         <lastmod>2025-06-22</lastmod>
+    </url>
+    <url>
+         <loc>https://zahlenhelfer.github.io/k8s-for-admins/storage/nfs/</loc>
+         <lastmod>2025-06-22</lastmod>
+    </url>
 </urlset>
