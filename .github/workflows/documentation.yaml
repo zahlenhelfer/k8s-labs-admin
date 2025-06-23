@@ -30,7 +30,7 @@ jobs:
       - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files mkdocs-print-site-plugin
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Publish docs
-        run: mkdocs build --site-dir ./mkdocs --config-file ./docs/mkdocs.yml
+        run: mkdocs build --site-dir ./mkdocs --config-file ./mkdocs.yml
 
       - name: Upload static files as artifact
         id: deployment
