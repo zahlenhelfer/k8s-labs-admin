@@ -6,27 +6,29 @@ nav:
                   - Getting Started: setup/cluster.md
                   - Types:
                             - Ingress: setup/ingress.md
-        - Kubernetes-Essentials:
-                  - Workload:
-                            - Kyverno-Admission: workload/kyverno-labels.md
-                  - Storage:
-                            - Nfs: storage/nfs.md
-                            - HostPath: storage/hostpath.md
+        - Workloads:
+        - Compliance:
+                  - Kyverno-Admission: compliance/kyverno-labels.md
+        - Storage:
+                  - Nfs: storage/nfs.md
+                  - HostPath: storage/hostpath.md
+        - CI/CD:
                   - Kustomize:
                             - Basics: kustomize/kustomize.md
                   - crds:
                             - Custom Resource Definitions: crds/simple-crd.md
+        - Observability:
                   - Monitoring:
                             - Metrics-Server & Grafana: monitoring/prometheus.md
                             - Metrics-Server & TLS: monitoring/grafana.md
-                  - Security:
-                            - Scan your Hosts (Nmap): security/nmap.md
-                            - Firewall: security/firewall-ufw.md
-                            - Firewall with Ansible: security/firewall-ansible.md
-                            - Kubeconfig: security/network-policies.md
-                            - Advanced:
-                                      - Suricata: security/suricata.md
-                                      - Nmap-Scan: security/nmap.md
+        - Security:
+                  - Scan your Hosts (Nmap): security/nmap.md
+                  - Firewall: security/firewall-ufw.md
+                  - Firewall with Ansible: security/firewall-ansible.md
+                  - Kubeconfig: security/network-policies.md
+                  - Advanced:
+                            - Suricata: security/suricata.md
+                            - Nmap-Scan: security/nmap.md
 
 theme: readthedocs
 plugins:
