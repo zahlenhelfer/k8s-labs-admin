@@ -7,6 +7,8 @@ nav:
                   - Types:
                             - Ingress: setup/ingress.md
         - Kubernetes-Essentials:
+                  - Workload:
+                            - Kyverno-Admission: workload/kyverno-labels.md
                   - Storage:
                             - Nfs: storage/nfs.md
                             - HostPath: storage/hostpath.md
@@ -18,7 +20,9 @@ nav:
                             - Metrics-Server & Grafana: monitoring/prometheus.md
                             - Metrics-Server & TLS: monitoring/grafana.md
                   - Security:
-                            - Kyverno-Admission: security/rbac.md
+                            - Scan your Hosts (Nmap): security/nmap.md
+                            - Firewall: security/firewall-ufw.md
+                            - Firewall with Ansible: security/firewall-ansible.md
                             - Kubeconfig: security/network-policies.md
                             - Advanced:
                                       - Suricata: security/suricata.md
