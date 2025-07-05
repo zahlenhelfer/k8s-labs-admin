@@ -1,0 +1,3 @@
+mkdocs
+mkdocs-gen-files
+mkdocs-print-site-plugin
