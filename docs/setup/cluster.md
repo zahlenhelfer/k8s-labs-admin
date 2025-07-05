@@ -1,7 +1,39 @@
-# Lorem cluster dolor
+# 🧪: Installation eines zwei Node Kubernetes-Cluster
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dolor, fringilla ac faucibus non, tincidunt ut nisi. Suspendisse sollicitudin tempor dui vel iaculis. Cras ut magna ut nulla feugiat viverra a a ligula. Nulla facilisi. Maecenas at consequat eros. Morbi ullamcorper et velit sit amet laoreet. Nunc pretium neque nisl, quis vulputate felis accumsan ac. Quisque vitae sapien massa. Vivamus condimentum erat id tincidunt vestibulum. Duis eu commodo neque. Vivamus vehicula lacinia arcu. Nulla augue sapien, lobortis vitae sapien non, facilisis condimentum quam. Pellentesque porttitor ornare nunc, maximus varius nunc tincidunt sed. Mauris dictum, risus at mollis condimentum, arcu lorem egestas velit, id vestibulum turpis lorem vitae felis. Cras convallis eget mi ac vulputate. Suspendisse at metus sit amet velit accumsan euismod.
+## Login
 
-Ut ultrices leo in faucibus cursus. Curabitur facilisis at lorem viverra euismod. Etiam luctus iaculis felis eu pharetra. Pellentesque non hendrerit arcu. Phasellus a eros faucibus, feugiat nisl eu, condimentum enim. Sed eleifend dui id ipsum vestibulum porta. Proin sem libero, euismod ac urna sit amet, venenatis ullamcorper nulla. Praesent pharetra eu mauris sit amet venenatis. In ut nisi sit amet elit sodales vulputate. Fusce tempus dignissim dolor, eget rutrum metus. Vestibulum vehicula, dolor non pharetra eleifend, libero mi lobortis arcu, eu euismod arcu elit at risus. Phasellus quis pharetra justo.
+- `ssh student@k8s-node-XX.dockerlabs.de`
 
-Mauris magna arcu, pretium eget ex quis, fringilla auctor magna. Phasellus varius nibh mauris, sed varius lorem posuere quis. Nullam condimentum non mi quis eleifend. Maecenas eget ex sed augue consequat rutrum varius vitae ligula. Fusce eu tempus ipsum. Mauris nec convallis neque, ac dictum leo. Proin feugiat dolor ut consequat pellentesque. Nullam cursus, lorem eu pellentesque hendrerit, eros dui sollicitudin massa, et imperdiet ipsum nulla et magna. Proin et nisl vel orci ultricies egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut ligula eget tellus placerat convallis et non justo. Aenean at nunc nisl. Nam a magna purus. Nam sit amet aliquam erat.
+## Installiere die Control-Plane
+
+- Login auf den ersten Server
+- wechsel in das Verzeichnis: `cd LFD459/SOLUTIONS/s_02/`
+- starten des Scripts: `script -q -c "bash k8scp.sh" $HOME/controlplane.out`
+- bei der Frage `keep the local version currently installed` auswählen
+- Kopieren des Join-Befehls <kubeadm join> aus der Log-Datei per grep: `grep -A1 "kubeadm join" controlplane.out`
+- Besipieloutput: `kubeadm join <ip>:6443 --token 1123 --discovery-token-ca-cert-hash sha256:16df252`
+- Installation der Auto-Completion:
+
+```bash
+source <(kubectl completion bash)
+echo "source <(kubectl completion bash)" >> $HOME/.bashrc
+```
+
+- Installation Prüfen:
+
+```bash
+kubectl get nodes
+NAME         STATUS   ROLES           AGE   VERSION
+k8s-node-0   Ready    control-plane   11m   v1.33.1
+```
+
+- Taint enfernen:
+`kubectl taint nodes --all node-role.kubernetes.io/control-plane-`
+
+## Installiere den Worker
+
+- Login auf den zweiten Server
+- wechsel in das Verzeichnis: `cd LFD459/SOLUTIONS/s_02/`
+- `bash k8sWorker.sh`
+- `sudo kubeadm join ...`
+- wechsel zur Control-Plane und wiederholtes: `kubectl get nodes`

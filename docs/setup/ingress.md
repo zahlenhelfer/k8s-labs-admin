@@ -1,7 +1,32 @@
-# Lorem Ingress dolor
+# 🧪 Übung: NGINX-Ingress-Controller installieren
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dolor, fringilla ac faucibus non, tincidunt ut nisi. Suspendisse sollicitudin tempor dui vel iaculis. Cras ut magna ut nulla feugiat viverra a a ligula. Nulla facilisi. Maecenas at consequat eros. Morbi ullamcorper et velit sit amet laoreet. Nunc pretium neque nisl, quis vulputate felis accumsan ac. Quisque vitae sapien massa. Vivamus condimentum erat id tincidunt vestibulum. Duis eu commodo neque. Vivamus vehicula lacinia arcu. Nulla augue sapien, lobortis vitae sapien non, facilisis condimentum quam. Pellentesque porttitor ornare nunc, maximus varius nunc tincidunt sed. Mauris dictum, risus at mollis condimentum, arcu lorem egestas velit, id vestibulum turpis lorem vitae felis. Cras convallis eget mi ac vulputate. Suspendisse at metus sit amet velit accumsan euismod.
+## 🧩 Schritt 1: Anlegen einer values.yaml Datei
 
-Ut ultrices leo in faucibus cursus. Curabitur facilisis at lorem viverra euismod. Etiam luctus iaculis felis eu pharetra. Pellentesque non hendrerit arcu. Phasellus a eros faucibus, feugiat nisl eu, condimentum enim. Sed eleifend dui id ipsum vestibulum porta. Proin sem libero, euismod ac urna sit amet, venenatis ullamcorper nulla. Praesent pharetra eu mauris sit amet venenatis. In ut nisi sit amet elit sodales vulputate. Fusce tempus dignissim dolor, eget rutrum metus. Vestibulum vehicula, dolor non pharetra eleifend, libero mi lobortis arcu, eu euismod arcu elit at risus. Phasellus quis pharetra justo.
+```yaml
+controller:
+  hostNetwork: true
+  kind: DaemonSet
+  ingressClassResource:
+    enabled: true
+    default: true
+  service:
+    externalIPs: [<IP>]
 
-Mauris magna arcu, pretium eget ex quis, fringilla auctor magna. Phasellus varius nibh mauris, sed varius lorem posuere quis. Nullam condimentum non mi quis eleifend. Maecenas eget ex sed augue consequat rutrum varius vitae ligula. Fusce eu tempus ipsum. Mauris nec convallis neque, ac dictum leo. Proin feugiat dolor ut consequat pellentesque. Nullam cursus, lorem eu pellentesque hendrerit, eros dui sollicitudin massa, et imperdiet ipsum nulla et magna. Proin et nisl vel orci ultricies egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut ligula eget tellus placerat convallis et non justo. Aenean at nunc nisl. Nam a magna purus. Nam sit amet aliquam erat.
+```
+
+## 🧩 Schritt 2: Auslesen der externen HOST-IP Adresse
+
+- Die IP Adresse kann einfach Shell ausgelesen werden:
+`ip -4 -o addr show scope global | awk '{print $4}' | cut -d/ -f1 | head -n1`
+
+- Ersetzen von `<IP>` in der `values.yaml`
+
+## 🧩 Schritt 3: Helm Installation des NGINX-Ingress Controller inkl. `values.yaml`
+
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx && helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx\
+  --create-namespace --namespace ingress-controller\
+  --version 4.12.2\
+  -f values.yaml
+```
