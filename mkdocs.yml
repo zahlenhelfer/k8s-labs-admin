@@ -1,7 +1,7 @@
 site_name: k8s for Admins
 site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
-theme: mkdocs-material
+theme: material
 plugins:
   - search
   - print-site
