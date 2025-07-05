@@ -3,7 +3,7 @@ site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
 theme:
   name: material
-  logo: assets/logo.png
+  logo: assets/logo.svg
 plugins:
   - optimize
   - search
