@@ -13,9 +13,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write  # REQUIRED to push to gh-pages
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,4 +35,4 @@ jobs:
       - run: pip install --upgrade pip && pip install -r requirements.txt
 
       - name: Publish docs
-        run: mkdocs gh-deploy --config-file ./mkdocs.yml --force
+        run: mkdocs gh-deploy --force
