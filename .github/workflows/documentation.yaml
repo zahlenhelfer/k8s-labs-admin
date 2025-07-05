@@ -28,17 +28,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.8'
+          cache: 'pip' # caching pip dependencies
 
       - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files mkdocs-print-site-plugin
       
       - name: Publish docs
-        run: mkdocs build --site-dir ./mkdocs --config-file ./mkdocs.yml
+        run: mkdocs build --config-file ./mkdocs.yml
 
       - name: Upload static files as artifact
         id: deployment
