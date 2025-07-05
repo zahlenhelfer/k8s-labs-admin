@@ -1,5 +1,4 @@
 site_name: k8s for Admins
-site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 nav:
   - Home: index.md
   - Node-Setup:
@@ -30,8 +29,8 @@ nav:
           - Kubeconfig: security/kubeconfig.md
       - general:
           - Suricata: security/suricata.md
-
 theme: readthedocs
 plugins:
   - search
   - print-site
+#site_url: https://zahlenhelfer.github.io/k8s-for-admins/
