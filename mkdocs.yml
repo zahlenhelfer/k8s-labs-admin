@@ -32,6 +32,8 @@ nav:
           - Suricata: security/suricata.md
 plugins:
   - search
-  - pdf-export:
-      combined: true
-      media_type: print
+  - print-site:
+      add_to_navigation: true # Adds the print page to the navigation
+      print_page_title: "📄 Print this site"
+      exclude:
+        - index.md
