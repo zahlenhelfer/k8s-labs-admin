@@ -2,10 +2,10 @@ site_name: k8s for Admins
 site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
 theme:
-  name: material
-  logo: asssets/logo.svg
+  name: material # Material theme for MkDocs
+  logo: asssets/logo.svg # Path to your logo file
   features:
-    - content.code.copy
+    - content.code.copy # Enables code copy feature
 nav:
   - Home: index.md
   - Node-Setup:
@@ -33,7 +33,7 @@ nav:
       - general:
           - Suricata: security/suricata.md
 plugins:
-  - search
+  - search # Enables search functionality
   - print-site:
       add_to_navigation: true # Adds the print page to the navigation
       print_page_title: "📄 Print this site"
