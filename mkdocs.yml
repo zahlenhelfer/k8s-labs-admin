@@ -4,12 +4,6 @@ site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 theme:
   name: material
   logo: asssets/logo.svg
-plugins:
-  - search
-  - print-site
-  - pdf-export:
-      combined: true
-      media_type: print
 nav:
   - Home: index.md
   - Node-Setup:
@@ -36,3 +30,8 @@ nav:
           - Kubeconfig: security/kubeconfig.md
       - general:
           - Suricata: security/suricata.md
+plugins:
+  - search
+  - pdf-export:
+      combined: true
+      media_type: print
