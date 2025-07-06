@@ -6,6 +6,7 @@ theme:
   logo: asssets/logo.svg # Path to your logo file
   features:
     - content.code.copy # Enables code copy feature
+    - content.code.select # Enables code select feature
 nav:
   - Home: index.md
   - Node-Setup:
