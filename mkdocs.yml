@@ -6,6 +6,7 @@ theme:
   logo: asssets/logo.svg
 nav:
   - Home: index.md
+  - Print: print/index.html
   - Node-Setup:
       - Getting Started: setup/cluster.md
       - Ingress: setup/ingress.md
