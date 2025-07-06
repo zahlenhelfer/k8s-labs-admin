@@ -6,7 +6,6 @@ theme:
   logo: asssets/logo.svg
 nav:
   - Home: index.md
-  - Print: print/index.html
   - Node-Setup:
       - Getting Started: setup/cluster.md
       - Ingress: setup/ingress.md
@@ -36,5 +35,3 @@ plugins:
   - print-site:
       add_to_navigation: true # Adds the print page to the navigation
       print_page_title: "📄 Print this site"
-      exclude:
-        - index.md
