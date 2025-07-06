@@ -7,6 +7,9 @@ theme:
 plugins:
   - search
   - print-site
+  - pdf-export:
+      combined: true
+      media_type: print
 nav:
   - Home: index.md
   - Node-Setup:
