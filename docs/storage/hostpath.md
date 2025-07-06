@@ -1,7 +1,105 @@
-# Lorem HostPath dolor
+# 🧪 Kubernetes `hostPath` Lab
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dolor, fringilla ac faucibus non, tincidunt ut nisi. Suspendisse sollicitudin tempor dui vel iaculis. Cras ut magna ut nulla feugiat viverra a a ligula. Nulla facilisi. Maecenas at consequat eros. Morbi ullamcorper et velit sit amet laoreet. Nunc pretium neque nisl, quis vulputate felis accumsan ac. Quisque vitae sapien massa. Vivamus condimentum erat id tincidunt vestibulum. Duis eu commodo neque. Vivamus vehicula lacinia arcu. Nulla augue sapien, lobortis vitae sapien non, facilisis condimentum quam. Pellentesque porttitor ornare nunc, maximus varius nunc tincidunt sed. Mauris dictum, risus at mollis condimentum, arcu lorem egestas velit, id vestibulum turpis lorem vitae felis. Cras convallis eget mi ac vulputate. Suspendisse at metus sit amet velit accumsan euismod.
+## 🔧 Prerequisites
 
-Ut ultrices leo in faucibus cursus. Curabitur facilisis at lorem viverra euismod. Etiam luctus iaculis felis eu pharetra. Pellentesque non hendrerit arcu. Phasellus a eros faucibus, feugiat nisl eu, condimentum enim. Sed eleifend dui id ipsum vestibulum porta. Proin sem libero, euismod ac urna sit amet, venenatis ullamcorper nulla. Praesent pharetra eu mauris sit amet venenatis. In ut nisi sit amet elit sodales vulputate. Fusce tempus dignissim dolor, eget rutrum metus. Vestibulum vehicula, dolor non pharetra eleifend, libero mi lobortis arcu, eu euismod arcu elit at risus. Phasellus quis pharetra justo.
+* Kubernetes cluster (e.g. Minikube, Kind)
+* `kubectl` installed and configured
+* Access to the node (for file verification)
 
-Mauris magna arcu, pretium eget ex quis, fringilla auctor magna. Phasellus varius nibh mauris, sed varius lorem posuere quis. Nullam condimentum non mi quis eleifend. Maecenas eget ex sed augue consequat rutrum varius vitae ligula. Fusce eu tempus ipsum. Mauris nec convallis neque, ac dictum leo. Proin feugiat dolor ut consequat pellentesque. Nullam cursus, lorem eu pellentesque hendrerit, eros dui sollicitudin massa, et imperdiet ipsum nulla et magna. Proin et nisl vel orci ultricies egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut ligula eget tellus placerat convallis et non justo. Aenean at nunc nisl. Nam a magna purus. Nam sit amet aliquam erat.
+---
+
+## ✅ Step 1: Prepare the host directory
+
+Login to your Kubernetes node (if using Minikube, run: `minikube ssh`) and create a directory:
+
+```bash
+sudo mkdir -p /data/hostpath-test
+sudo chmod 777 /data/hostpath-test
+```
+
+---
+
+## ✅ Step 2: Create a Pod with a `hostPath` volume
+
+Create a file named `hostpath-pod.yaml`:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-demo
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: [ "sh", "-c", "sleep 3600" ]
+    volumeMounts:
+    - mountPath: /data
+      name: host-volume
+  volumes:
+  - name: host-volume
+    hostPath:
+      path: /data/hostpath-test
+      type: DirectoryOrCreate
+```
+
+Apply the Pod:
+
+```bash
+kubectl apply -f hostpath-pod.yaml
+```
+
+---
+
+## ✅ Step 3: Interact with the Pod
+
+Enter the pod and write a file:
+
+```bash
+kubectl exec -it hostpath-demo -- sh
+echo "This is written from the pod" > /data/hello.txt
+exit
+```
+
+---
+
+## ✅ Step 4: Verify on the Host
+
+On the host (e.g. `minikube ssh`):
+
+```bash
+cat /data/hostpath-test/hello.txt
+```
+
+You should see:
+
+```
+This is written from the pod
+```
+
+---
+
+## ✅ Step 5 (Optional): Test persistence
+
+Delete and recreate the Pod:
+
+```bash
+kubectl delete pod hostpath-demo
+kubectl apply -f hostpath-pod.yaml
+```
+
+Then check again in the pod:
+
+```bash
+kubectl exec -it hostpath-demo -- cat /data/hello.txt
+```
+
+The file should still be there.
+
+---
+
+## 🧠 What You Learned
+
+* `hostPath` allows pods to access host node files/directories.
+* Changes from inside the pod are reflected on the host and vice versa.
+* This is useful for debugging, logs, or interacting with host-mounted devices — but **not recommended for production** due to tight coupling with host nodes.

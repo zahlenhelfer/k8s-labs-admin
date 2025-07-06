@@ -4,6 +4,8 @@ site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 theme:
   name: material
   logo: asssets/logo.svg
+  features:
+    - content.code.copy
 nav:
   - Home: index.md
   - Node-Setup:
