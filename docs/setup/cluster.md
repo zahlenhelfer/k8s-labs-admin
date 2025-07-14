@@ -1,10 +1,10 @@
-# 🧪: Installation eines zwei Node Kubernetes-Cluster
+# Installation eines zwei Node Kubernetes-Cluster
 
 ## Login
 
 - `ssh student@k8s-node-XX.dockerlabs.de`
 
-## Installiere die Control-Plane
+## Installation der Control-Plane
 
 - Login auf den ersten Server
 - wechsel in das Verzeichnis: `cd LFD459/SOLUTIONS/s_02/`
@@ -30,7 +30,7 @@ k8s-node-0   Ready    control-plane   11m   v1.33.1
 - Taint enfernen:
 `kubectl taint nodes --all node-role.kubernetes.io/control-plane-`
 
-## Installiere den Worker
+## Installation des Worker
 
 - Login auf den zweiten Server
 - wechsel in das Verzeichnis: `cd LFD459/SOLUTIONS/s_02/`

@@ -1,7 +1,7 @@
 
-# 🔬 Lab: Using Kustomize with Kubernetes
+# Lab: Using Kustomize with Kubernetes
 
-## 🧰 Prerequisites
+## Prerequisites
 
 * Kubernetes cluster (Minikube, Kind, or any cluster)
 * `kubectl` installed
@@ -28,7 +28,7 @@ kustomize-lab/
 
 ---
 
-## 1️⃣ Create the Base Configuration
+## Create the Base Configuration
 
 📄 `base/deployment.yaml`
 
@@ -80,9 +80,9 @@ resources:
 
 ---
 
-## 2️⃣ Create Overlays
+## Create Overlays
 
-### 🔧 Dev Overlay
+### Dev Overlay
 
 📄 `overlays/dev/kustomization.yaml`
 
@@ -107,7 +107,7 @@ spec:
 
 ---
 
-### 🔧 Prod Overlay
+### Prod Overlay
 
 📄 `overlays/prod/kustomization.yaml`
 
@@ -132,7 +132,7 @@ spec:
 
 ---
 
-## 🚀 Apply the Configurations
+## Apply the Configurations
 
 ### Dev
 
@@ -148,7 +148,7 @@ kubectl apply -k overlays/prod
 
 ---
 
-## ✅ Verify
+## Verify
 
 ```bash
 kubectl get deployments
@@ -159,17 +159,10 @@ You should see an `nginx` deployment with the correct number of replicas dependi
 
 ---
 
-## 🧹 Clean Up
+## Clean Up
 
 ```bash
 kubectl delete -k overlays/dev
 # or
 kubectl delete -k overlays/prod
 ```
-
----
-
-## 📝 Notes
-
-* You can add more patches (like changing the image, resources, or labels).
-* Kustomize helps manage configurations cleanly, especially in GitOps workflows.

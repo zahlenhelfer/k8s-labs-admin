@@ -1,17 +1,17 @@
-# 🔬 Lab: Kubernetes Metrics Pipeline
+# Lab: Kubernetes Metrics Pipeline
 
 **Goal:** Deploy `metrics-server` → Scrape with `Prometheus` → Visualize in `Grafana`
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 * A running Kubernetes cluster (Minikube, Kind, or similar)
 * `kubectl` and optionally `helm` installed
 
 ---
 
-## 📦 Overview
+## Overview
 
 ```text
 +-------------------+
@@ -29,11 +29,11 @@
 
 ---
 
-## 📁 Step-by-Step Instructions
+## Step-by-Step Instructions
 
 ---
 
-### 1️⃣ Deploy `metrics-server`
+### Deploy `metrics-server`
 
 ```bash
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
@@ -54,7 +54,7 @@ kubectl get --raw "/apis/metrics.k8s.io/v1beta1/nodes"
 
 ---
 
-### 2️⃣ Install Prometheus using Helm
+### Install Prometheus using Helm
 
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -75,9 +75,9 @@ Visit: [http://localhost:9090](http://localhost:9090)
 
 ---
 
-### 3️⃣ Configure Prometheus to Scrape Metrics Server
+### Configure Prometheus to Scrape Metrics Server
 
-#### 📄 Add a new scrape config
+#### Add a new scrape config
 
 Create a configmap to add custom scrape configs:
 
@@ -117,7 +117,7 @@ helm upgrade prometheus prometheus-community/prometheus \
 
 ---
 
-### 4️⃣ Install Grafana with Helm
+### Install Grafana with Helm
 
 ```bash
 helm install grafana grafana/grafana \
@@ -138,7 +138,7 @@ Login with: `admin / admin`
 
 ---
 
-### 5️⃣ Configure Grafana
+### Configure Grafana
 
 * Add Prometheus as a data source:
 
@@ -147,13 +147,13 @@ Login with: `admin / admin`
 
 ---
 
-## ✅ Done
+## Done
 
 Now you're visualizing real-time Kubernetes metrics via metrics-server → Prometheus → Grafana.
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
 ```bash
 helm uninstall prometheus -n monitoring
@@ -161,9 +161,3 @@ helm uninstall grafana -n monitoring
 kubectl delete ns monitoring
 kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
-
----
-
-## 📦 Want a GitHub-ready repo version?
-
-I can generate a repo with YAML manifests, Helm values, and a README—just say the word.

@@ -1,10 +1,10 @@
-# 🧪 CSI NFS Dynamic Provisioning Lab
+# CSI NFS Dynamic Provisioning Lab
 
-> ✅ Compatible with Minikube, Kind, or any Kubernetes 1.20+
+> Compatible with Minikube, Kind, or any Kubernetes 1.20+
 
 ---
 
-## 🔧 Prerequisites
+## Prerequisites
 
 * Kubernetes cluster
 * `kubectl` installed
@@ -13,7 +13,7 @@
 
 ---
 
-## 🔸 Step 1: Install & Configure NFS Server (On Host or VM)
+## Step 1: Install & Configure NFS Server (On Host or VM)
 
 On your **host** or any reachable machine (e.g. Minikube VM), install NFS server:
 
@@ -40,7 +40,7 @@ sudo systemctl start nfs-server
 
 ---
 
-## 🔸 Step 2: Deploy the NFS CSI Driver
+## Step 2: Deploy the NFS CSI Driver
 
 Install the CSI NFS driver (official):
 
@@ -57,7 +57,7 @@ kubectl get daemonset -n kube-system -l app=csi-nfs-node
 
 ---
 
-## 🔸 Step 3: Create a StorageClass
+## Step 3: Create a StorageClass
 
 Create a file called `nfs-sc.yaml`:
 
@@ -84,7 +84,7 @@ kubectl apply -f nfs-sc.yaml
 
 ---
 
-## 🔸 Step 4: Create a PVC + Pod using the NFS StorageClass
+## Step 4: Create a PVC + Pod using the NFS StorageClass
 
 Create `nfs-pvc-pod.yaml`:
 
@@ -127,7 +127,7 @@ kubectl apply -f nfs-pvc-pod.yaml
 
 ---
 
-## 🔸 Step 5: Verify NFS Volume Mount and File Write
+## Step 5: Verify NFS Volume Mount and File Write
 
 Check logs or exec into pod:
 
@@ -151,7 +151,7 @@ You'll see the same file — confirming dynamic provisioning!
 
 ---
 
-## 🧼 Cleanup
+## Cleanup
 
 ```bash
 kubectl delete -f nfs-pvc-pod.yaml
@@ -160,7 +160,7 @@ kubectl delete storageclass nfs-csi
 
 ---
 
-## 📘 What You Learned
+## What You Learned
 
 * How to set up an **NFS server**
 * Install the **NFS CSI driver**

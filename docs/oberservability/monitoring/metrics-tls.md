@@ -3,13 +3,13 @@
 
 ---
 
-## 🎯 Goal
+## Goal
 
 Deploy a working `metrics-server` instance with a **valid certificate** including the SANs needed to talk to the kubelets securely (`--kubelet-preferred-address-types=InternalIP,Hostname`).
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 * Kubernetes cluster (Minikube, Kind, etc.)
 * `kubectl`, `openssl`
@@ -17,7 +17,7 @@ Deploy a working `metrics-server` instance with a **valid certificate** includin
 
 ---
 
-## 📁 Lab Steps Overview
+## Lab Steps Overview
 
 1. Generate a TLS certificate with proper SANs
 2. Patch or install `metrics-server` using the new certificate
@@ -25,7 +25,7 @@ Deploy a working `metrics-server` instance with a **valid certificate** includin
 
 ---
 
-## 1️⃣ Generate Certificate with Required SANs
+## Generate Certificate with Required SANs
 
 ```bash
 mkdir -p metrics-server-cert && cd metrics-server-cert
@@ -74,7 +74,7 @@ You now have:
 
 ---
 
-## 2️⃣ Deploy Metrics Server with Custom TLS
+## Deploy Metrics Server with Custom TLS
 
 Download and edit the deployment YAML:
 
@@ -82,7 +82,7 @@ Download and edit the deployment YAML:
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml --dry-run=client -o yaml > metrics-server.yaml
 ```
 
-### 📦 Modify `metrics-server.yaml`
+### Modify `metrics-server.yaml`
 
 * Add volume mounts for the certificate
 * Add `--tls-cert-file` and `--tls-private-key-file` flags
@@ -113,7 +113,7 @@ spec:
 
 ---
 
-## 3️⃣ Create the Certificate as a Secret
+## Create the Certificate as a Secret
 
 ```bash
 kubectl create secret generic metrics-server-certs \
@@ -124,7 +124,7 @@ kubectl create secret generic metrics-server-certs \
 
 ---
 
-## 4️⃣ Apply the Modified Deployment
+## Apply the Modified Deployment
 
 ```bash
 kubectl apply -f metrics-server.yaml
@@ -132,7 +132,7 @@ kubectl apply -f metrics-server.yaml
 
 ---
 
-## ✅ 5️⃣ Verify
+## Verify
 
 Wait for the pod to be ready:
 
@@ -151,20 +151,9 @@ kubectl top pods --all-namespaces
 
 ---
 
-## 🧹 Optional Cleanup
+## Optional Cleanup
 
 ```bash
 kubectl delete -f metrics-server.yaml
 kubectl delete secret metrics-server-certs -n kube-system
 ```
-
----
-
-## 📦 Want GitHub-Ready YAMLs?
-
-I can package:
-
-* `csr.conf`
-* Deployment YAML with cert mounts
-* Secret definition
-* README with full instructions

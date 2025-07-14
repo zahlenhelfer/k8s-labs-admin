@@ -1,6 +1,6 @@
-# 🧪 Kubernetes `hostPath` Lab
+# Kubernetes `hostPath` Lab
 
-## 🔧 Prerequisites
+## Prerequisites
 
 * Kubernetes cluster (e.g. Minikube, Kind)
 * `kubectl` installed and configured
@@ -8,7 +8,7 @@
 
 ---
 
-## ✅ Step 1: Prepare the host directory
+## Step 1: Prepare the host directory
 
 Login to your Kubernetes node (if using Minikube, run: `minikube ssh`) and create a directory:
 
@@ -19,7 +19,7 @@ sudo chmod 777 /data/hostpath-test
 
 ---
 
-## ✅ Step 2: Create a Pod with a `hostPath` volume
+## Step 2: Create a Pod with a `hostPath` volume
 
 Create a file named `hostpath-pod.yaml`:
 
@@ -51,7 +51,7 @@ kubectl apply -f hostpath-pod.yaml
 
 ---
 
-## ✅ Step 3: Interact with the Pod
+## Step 3: Interact with the Pod
 
 Enter the pod and write a file:
 
@@ -63,7 +63,7 @@ exit
 
 ---
 
-## ✅ Step 4: Verify on the Host
+## Step 4: Verify on the Host
 
 On the host (e.g. `minikube ssh`):
 
@@ -79,7 +79,7 @@ This is written from the pod
 
 ---
 
-## ✅ Step 5 (Optional): Test persistence
+## Step 5 (Optional): Test persistence
 
 Delete and recreate the Pod:
 
@@ -98,7 +98,7 @@ The file should still be there.
 
 ---
 
-## 🧠 What You Learned
+## What have You Learned
 
 * `hostPath` allows pods to access host node files/directories.
 * Changes from inside the pod are reflected on the host and vice versa.

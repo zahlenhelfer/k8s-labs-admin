@@ -1,9 +1,9 @@
 
-# 🔬 Lab: Deploy Kyverno and Enforce `costcenter` Label on Pods
+# Lab: Deploy Kyverno and Enforce `costcenter` Label on Pods
 
 ---
 
-## 🎯 Objective
+## Objective
 
 1. Deploy Kyverno in your cluster
 2. Create a Kyverno policy that **validates all pods** have a `costcenter` label
@@ -11,7 +11,7 @@
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 * A running Kubernetes cluster (Minikube, Kind, etc.)
 * `kubectl` installed
@@ -32,7 +32,7 @@ kyverno-lab/
 
 ---
 
-## 1️⃣ Install Kyverno
+## Install Kyverno
 
 ```bash
 kubectl create -f https://github.com/kyverno/kyverno/releases/latest/download/install.yaml
@@ -46,7 +46,7 @@ kubectl get pods -n kyverno
 
 ---
 
-## 2️⃣ Create the Required Label Policy
+## Create the Required Label Policy
 
 📄 `policies/require-costcenter-label.yaml`
 
@@ -79,11 +79,11 @@ kubectl apply -f policies/require-costcenter-label.yaml
 
 ---
 
-## 3️⃣ Test the Policy
+## Test the Policy
 
 ---
 
-### ✅ Good Pod
+### Good Pod
 
 📄 `test/good-pod.yaml`
 
@@ -139,7 +139,7 @@ Error from server: admission webhook ... denied the request: All pods must have 
 
 ---
 
-## ✅ Summary
+## Summary
 
 | Component          | Description                             |
 | ------------------ | --------------------------------------- |
@@ -149,7 +149,7 @@ Error from server: admission webhook ... denied the request: All pods must have 
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
 ```bash
 kubectl delete -f test/

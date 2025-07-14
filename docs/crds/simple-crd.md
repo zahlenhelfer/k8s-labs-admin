@@ -1,12 +1,12 @@
-# 🔬 Lab: Create and Use a Custom Resource Definition (CRD)
+# Lab: Create and Use a Custom Resource Definition (CRD)
 
-## 🎯 Goal
+## Goal
 
 Create a `Fruit` CRD that allows you to define fruits like `apple`, `banana`, etc., and deploy a controller that prints them.
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 * Kubernetes cluster (e.g. Minikube)
 * `kubectl` installed
@@ -14,7 +14,7 @@ Create a `Fruit` CRD that allows you to define fruits like `apple`, `banana`, et
 
 ---
 
-## 📁 Lab Structure
+## Lab Structure
 
 ```bash
 crd-lab/
@@ -28,7 +28,7 @@ crd-lab/
 
 ---
 
-## 1️⃣ Define the CRD
+## Define the CRD
 
 📄 `crds/fruit-crd.yaml`
 
@@ -73,7 +73,7 @@ kubectl apply -f crds/fruit-crd.yaml
 
 ---
 
-## 2️⃣ Create a Custom Resource (CR)
+## Create a Custom Resource (CR)
 
 📄 `examples/apple.yaml`
 
@@ -102,7 +102,7 @@ kubectl get fruit apple -o yaml
 
 ---
 
-## 3️⃣ Create a Simple Controller (optional)
+## Create a Simple Controller (optional)
 
 This is a *demo controller* (bash script) that watches the fruit CRs and prints them. In real apps you'd use a proper controller with `client-go` or Kubebuilder.
 
@@ -140,7 +140,7 @@ kubectl apply -f examples/banana.yaml
 
 ---
 
-## 4️⃣ Clean Up
+## Clean Up
 
 ```bash
 kubectl delete -f examples/
@@ -149,16 +149,10 @@ kubectl delete -f crds/
 
 ---
 
-## ✅ Summary
+## Summary
 
 | Component        | Description                      |
 | ---------------- | -------------------------------- |
 | `Fruit` CRD      | Defines the structure of a fruit |
 | Custom Resources | Concrete fruit instances         |
 | Controller       | Watches and prints changes       |
-
----
-
-## 🧪 Want to generate this as a GitHub repo?
-
-I can create the full directory, with a README and `Makefile` for automation. Just say: **"Yes, create the GitHub-ready repo."**
