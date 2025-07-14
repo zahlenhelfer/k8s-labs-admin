@@ -117,7 +117,7 @@ kubectl apply -f log-emitter.yaml
 
 You should see logs like:
 
-```
+```console
 Hello from log-emitter-xxxx
 ```
 
