@@ -18,12 +18,14 @@ nav:
           - Nfs: storage/nfs.md
           - HostPath: storage/hostpath.md
     - CI/CD:
-          - ArgoCD: cicd/argocd.md
+          - ArgoCD Setup: cicd/argocd.md
           - Kustomize: kustomize/kustomize.md
     - Observability:
           - Monitoring:
                 - Metrics-Server & Grafana: oberservability/monitoring/metrics-server.md
                 - Metrics-Server & TLS: oberservability/monitoring/metrics-tls.md
+          - Logging:
+                - Loki Stack: oberservability/logging/loki-stack.md
     - Development:
           - Custom Resource Definitions: crds/simple-crd.md
     - Security:
