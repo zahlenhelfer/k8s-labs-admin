@@ -1,5 +1,5 @@
 
-# 🧪 Exercise: Install and Configure Firewall for a Kubernetes Cluster (Ubuntu 24.04)
+# Exercise: Install and Configure Firewall for a Kubernetes Cluster (Ubuntu 24.04)
 
 ## 📝 Objective
 
@@ -23,7 +23,7 @@ You will learn to:
 
 ---
 
-## 🔧 Part 1: Install and Enable UFW
+## 🧩 Part 1: Install and Enable UFW
 
 On **both nodes**:
 
@@ -165,11 +165,3 @@ nc -zv <control-plane-ip> 6443
 | kube-scheduler          | 10259         | ✗           |
 | kube-controller-manager | 10257         | ✗           |
 | NodePort services       | Optional      | 30000–32767 |
-
----
-
-## ✅ Deliverables
-
-* `ufw status` output from both nodes
-* Screenshot or copy of successful/blocked port tests
-* Reflection: Which ports surprised you? What did you learn?

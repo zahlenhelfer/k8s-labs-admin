@@ -1,6 +1,6 @@
-# 🧪 Exercise: Nmap Scan of a Kubernetes Server on Ubuntu 24.04
+# Exercise: Nmap Scan of a Kubernetes Server on Ubuntu 24.04
 
-## 📝 Objective
+## Objective
 
 By the end of this exercise, you will:
 
@@ -44,12 +44,21 @@ ip a
 
 ---
 
-## 🔍 Part 3: Perform Nmap Scans
+## 🧩 Part 3: Perform Nmap Scans
 
 ### 1. Basic port scan (top 1000 ports)
 
 ```bash
 nmap 192.168.122.10
+```
+
+Nothing should happen, because it´s just the top 1000 ports
+---
+
+### 2. Full port scan (much slower)
+
+```bash
+sudo nmap -p- 192.168.122.10
 ```
 
 Expected open ports (for Kubernetes):
@@ -59,14 +68,6 @@ Expected open ports (for Kubernetes):
 * **10255**: (deprecated, read-only Kubelet API)
 * **10257/10259**: Controller/Manager
 * **2379–2380**: etcd ports
-
----
-
-### 2. Full port scan (optional but slower)
-
-```bash
-sudo nmap -p- 192.168.122.10
-```
 
 ---
 
@@ -107,7 +108,7 @@ This checks for:
 
 ---
 
-## 🧪 Part 4: Interpreting Results
+## 🧩 Part 4: Interpreting Results
 
 Answer the following:
 
@@ -118,7 +119,7 @@ Answer the following:
 
 ---
 
-## ✅ Part 5: Hardening Suggestions (Optional)
+## 🧩 Part 5: Hardening Suggestions (Optional)
 
 If etcd or the kubelet API is exposed:
 
@@ -134,7 +135,7 @@ sudo ufw allow from 192.168.122.0/24 to any port 6443 proto tcp
 
 ---
 
-## 📌 Summary
+## 🧾 Summary
 
 | Scan Type      | Command                              | Purpose                           |
 | -------------- | ------------------------------------ | --------------------------------- |

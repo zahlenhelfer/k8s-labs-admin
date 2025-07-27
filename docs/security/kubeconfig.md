@@ -1,9 +1,3 @@
----
-
-Here’s a **hands-on lab** to create a Kubernetes **user named `developer`** and generate a **`kubeconfig` file** for that user.
-
----
-
 # 🔬 Lab: Create a Kubernetes User and Generate `kubeconfig`
 
 ## 🎯 Goal
@@ -22,7 +16,7 @@ Create a user `developer` using a client certificate and give them access to a s
 
 ## 📁 Lab Structure
 
-```
+```console
 developer-lab/
 ├── certs/
 │   ├── developer-csr.conf
