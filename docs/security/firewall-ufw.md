@@ -89,7 +89,7 @@ sudo ufw allow 10250/tcp
 sudo ufw allow 30000:32767/tcp
 ```
 
-> If you're using **container network plugins** (CNI) like Flannel, Calico, or Weave Net, open their ports too:
+> If you're using **container network plugins** (CNI) like Flannel, Calico, or Cilium, open their ports too:
 
 **Example (Flannel)**:
 
@@ -103,6 +103,36 @@ sudo ufw allow 8472/udp
 ```bash
 sudo ufw allow 179/tcp
 sudo ufw allow 4789/udp
+```
+
+**Example (Cilium with kube-proxy)**:
+
+```bash
+# VXLAN overlay (default)
+sudo ufw allow 8472/udp
+
+# Health checks (agent <-> agent)
+sudo ufw allow 4240/tcp
+
+# Cilium agent API (optional debug)
+sudo ufw allow 4244/tcp
+```
+
+**Example (Cilium without kube-proxy)**:
+
+```bash
+# VXLAN overlay (or Geneve if configured)
+sudo ufw allow 8472/udp
+
+# Health checks between nodes
+sudo ufw allow 4240/tcp
+
+# Cilium agent API (optional debug)
+sudo ufw allow 4244/tcp
+
+# Cilium HostPort/ClusterIP load-balancing (BPF-based)
+sudo ufw allow 6081/udp     # if using Geneve encapsulation instead of VXLAN
+sudo ufw allow 179/tcp      # if using BGP (optional)
 ```
 
 ---
