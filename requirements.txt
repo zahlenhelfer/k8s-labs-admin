@@ -2,4 +2,4 @@ mkdocs
 mkdocs-gen-files
 mkdocs-material
 mkdocs-print-site-plugin
-
+mkdocs-exporter
