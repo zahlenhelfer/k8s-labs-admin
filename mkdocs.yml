@@ -42,7 +42,7 @@ plugins:
     - exporter:
           formats:
               pdf:
-                  concurrency: 16
+                  concurrency: 1
     - print-site:
           add_to_navigation: true # Adds the print page to the navigation
           print_page_title: "📄 Print this site"
