@@ -36,16 +36,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip && pip install -r requirements.txt
-          playwright install
-              
-      # # Create or update the release for the tag and upload the PDF
-      # - name: Upload PDF to Release
-      #   uses: softprops/action-gh-release@v2
-      #   with:
-      #     files: |
-      #       documentation.pdf
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
       
       - name: Publish docs
         run: mkdocs gh-deploy --force
