@@ -40,9 +40,9 @@ nav:
 plugins:
   - search # Enables search functionality
   - exporter:
-    formats:
-      pdf:
-        concurrency: 16
+      formats:
+        pdf:
+          concurrency: 16
   # - print-site:
   #     add_to_navigation: true # Adds the print page to the navigation
   #     print_page_title: "📄 Print this site"
