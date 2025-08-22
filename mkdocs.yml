@@ -43,6 +43,10 @@ plugins:
       formats:
         pdf:
           concurrency: 1
+          aggregator:
+            enabled: true
+            output: documentation.pdf
+            covers: all
       buttons:
         - title: Download as PDF
           icon: material-file-download-outline
