@@ -44,9 +44,9 @@ plugins:
         pdf:
           concurrency: 1
           aggregator:
-            enabled: false
+            enabled: true
             output: documentation.pdf
-            covers: all
+            covers: none
       buttons:
         - title: Download as PDF
           icon: material-file-download-outline
