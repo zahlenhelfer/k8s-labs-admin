@@ -42,4 +42,7 @@ plugins:
   - print-site:
       add_to_navigation: true # Adds the print page to the navigation
       print_page_title: "📄 Print this site"
-  - exporter
+  - exporter:
+      formats:
+        pdf:
+          enabled: !ENV [MKDOCS_EXPORTER_PDF_ENABLED, true]
