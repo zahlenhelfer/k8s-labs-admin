@@ -37,6 +37,8 @@ jobs:
         run: |
           pip install --upgrade pip && pip install -r requirements.txt
           sudo apt-get install -y pandoc
+          sudo playwright install chrome --with-deps
+
         
       # - name: Generate PDF
       #   run: mkdocs-exporter pdf --output-file documentation.pdf
