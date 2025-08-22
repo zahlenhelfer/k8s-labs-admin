@@ -38,8 +38,16 @@ nav:
       - general:
           - Suricata: security/suricata.md
 plugins:
-  - with-pdf
   - search # Enables search functionality
   - print-site:
       add_to_navigation: true # Adds the print page to the navigation
       print_page_title: "📄 Print this site"
+  - exporter:
+      formats:
+        pdf:
+        enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
+        concurrency: 8
+        aggregator:
+          enabled: true
+          output: pdf/documentation.pdf
+          covers: all
