@@ -44,7 +44,7 @@ plugins:
         pdf:
           concurrency: 1
           aggregator:
-            enabled: true
+            enabled: false
             output: documentation.pdf
             covers: all
       buttons:
