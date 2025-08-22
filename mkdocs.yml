@@ -42,10 +42,8 @@ plugins:
   - exporter:
       formats:
         pdf:
-          aggregator:
-            enabled: true
-            output: documentation.pdf
-            covers: all
+          enabled: true
+
   # - print-site:
   #     add_to_navigation: true # Adds the print page to the navigation
   #     print_page_title: "📄 Print this site"
