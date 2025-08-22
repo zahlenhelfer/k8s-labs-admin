@@ -39,10 +39,7 @@ nav:
           - Suricata: security/suricata.md
 plugins:
   - search # Enables search functionality
-  - exporter:
-      formats:
-        pdf:
-          browser: chromium-browser
+  - exporter
   # - print-site:
   #     add_to_navigation: true # Adds the print page to the navigation
   #     print_page_title: "📄 Print this site"
