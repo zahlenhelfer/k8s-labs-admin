@@ -43,6 +43,11 @@ plugins:
       formats:
         pdf:
           concurrency: 1
-  # - print-site:
-  #     add_to_navigation: true # Adds the print page to the navigation
-  #     print_page_title: "📄 Print this site"
+      buttons:
+        - title: Download as PDF
+          icon: material-file-download-outline
+          enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
+          attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
+  - print-site:
+      add_to_navigation: true # Adds the print page to the navigation
+      print_page_title: "📄 Print this site"
