@@ -42,7 +42,7 @@ plugins:
   - exporter:
       formats:
         pdf:
-          concurrency: 16
+          browser: chromium-browser
   # - print-site:
   #     add_to_navigation: true # Adds the print page to the navigation
   #     print_page_title: "📄 Print this site"
