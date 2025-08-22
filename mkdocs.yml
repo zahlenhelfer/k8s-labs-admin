@@ -3,7 +3,7 @@ site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
 theme:
   name: material # Material theme for MkDocs
-  #logo: img/k8s_logo.svg # Path to your logo file
+  logo: img/k8s_logo.svg # Path to your logo file
   features:
     - content.code.copy # Enables code copy feature
     - content.code.select # Enables code select feature
