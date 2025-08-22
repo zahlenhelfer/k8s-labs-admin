@@ -42,11 +42,10 @@ plugins:
   - exporter:
       formats:
         pdf:
-          concurrency: 8
-      buttons:
-        - title: Download as PDF
-          icon: material-file-download-outline
-          enabled: true
+          aggregator:
+            enabled: true
+            output: documentation.pdf
+            covers: all
   - print-site:
       add_to_navigation: true # Adds the print page to the navigation
       print_page_title: "📄 Print this site"
