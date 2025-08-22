@@ -45,7 +45,6 @@ plugins:
   - exporter:
       formats:
         pdf:
-        enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
         concurrency: 8
         aggregator:
           enabled: true
