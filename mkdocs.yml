@@ -2,43 +2,44 @@ site_name: k8s for Admins
 site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
 theme:
-    name: material # Material theme for MkDocs
-    logo: asssets/logo.svg # Path to your logo file
-    features:
-        - content.code.copy # Enables code copy feature
-        - content.code.select # Enables code select feature
+  name: material # Material theme for MkDocs
+  logo: asssets/logo.svg # Path to your logo file
+  features:
+    - content.code.copy # Enables code copy feature
+    - content.code.select # Enables code select feature
 nav:
-    - Home: index.md
-    - Node-Setup:
-          - Getting Started: setup/cluster.md
-          - Ingress: setup/ingress.md
-    - Compliance:
-          - Kyverno-Admission: compliance/kyverno/kyverno-labels.md
-    - Storage:
-          - Nfs: storage/nfs.md
-          - HostPath: storage/hostpath.md
-    - CI/CD:
-          - ArgoCD Setup: cicd/argocd.md
-          - Kustomize: kustomize/kustomize.md
-    - Observability:
-          - Monitoring:
-                - Metrics-Server & Grafana: oberservability/monitoring/metrics-server.md
-                - Metrics-Server & TLS: oberservability/monitoring/metrics-tls.md
-          - Logging:
-                - Loki Stack: oberservability/logging/loki-stack.md
-    - Development:
-          - Custom Resource Definitions: crds/simple-crd.md
-    - Security:
-          - Host:
-                - Scan your Hosts (Nmap): security/nmap.md
-                - Firewall: security/firewall-ufw.md
-                - Firewall with Ansible: security/firewall-ansible.md
-          - Kubeconfig:
-                - Kubeconfig: security/kubeconfig.md
-          - general:
-                - Suricata: security/suricata.md
+  - Home: index.md
+  - Node-Setup:
+      - Getting Started: setup/cluster.md
+      - Ingress: setup/ingress.md
+  - Compliance:
+      - Kyverno-Admission: compliance/kyverno/kyverno-labels.md
+  - Storage:
+      - Nfs: storage/nfs.md
+      - HostPath: storage/hostpath.md
+  - CI/CD:
+      - ArgoCD Setup: cicd/argocd.md
+      - Kustomize: kustomize/kustomize.md
+  - Observability:
+      - Monitoring:
+          - Metrics-Server & Grafana: oberservability/monitoring/metrics-server.md
+          - Metrics-Server & TLS: oberservability/monitoring/metrics-tls.md
+      - Logging:
+          - Loki Stack: oberservability/logging/loki-stack.md
+  - Development:
+      - Custom Resource Definitions: crds/simple-crd.md
+  - Security:
+      - Host:
+          - Scan your Hosts (Nmap): security/nmap.md
+          - Firewall: security/firewall-ufw.md
+          - Firewall with Ansible: security/firewall-ansible.md
+      - Kubeconfig:
+          - Kubeconfig: security/kubeconfig.md
+      - general:
+          - Suricata: security/suricata.md
 plugins:
-    - search # Enables search functionality
-    - print-site:
-          add_to_navigation: true # Adds the print page to the navigation
-          print_page_title: "📄 Print this site"
+  - with-pdf
+  - search # Enables search functionality
+  - print-site:
+      add_to_navigation: true # Adds the print page to the navigation
+      print_page_title: "📄 Print this site"
