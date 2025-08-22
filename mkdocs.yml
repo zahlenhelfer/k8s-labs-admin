@@ -12,31 +12,31 @@ nav:
     - Node-Setup:
           - Getting Started: setup/cluster.md
           - Ingress: setup/ingress.md
-    - Compliance:
-          - Kyverno-Admission: compliance/kyverno/kyverno-labels.md
-    - Storage:
-          - Nfs: storage/nfs.md
-          - HostPath: storage/hostpath.md
-    - CI/CD:
-          - ArgoCD Setup: cicd/argocd.md
-          - Kustomize: kustomize/kustomize.md
-    - Observability:
-          - Monitoring:
-                - Metrics-Server & Grafana: oberservability/monitoring/metrics-server.md
-                - Metrics-Server & TLS: oberservability/monitoring/metrics-tls.md
-          - Logging:
-                - Loki Stack: oberservability/logging/loki-stack.md
-    - Development:
-          - Custom Resource Definitions: crds/simple-crd.md
-    - Security:
-          - Host:
-                - Scan your Hosts (Nmap): security/nmap.md
-                - Firewall: security/firewall-ufw.md
-                - Firewall with Ansible: security/firewall-ansible.md
-          - Kubeconfig:
-                - Kubeconfig: security/kubeconfig.md
-          - general:
-                - Suricata: security/suricata.md
+    # - Compliance:
+    #       - Kyverno-Admission: compliance/kyverno/kyverno-labels.md
+    # - Storage:
+    #       - Nfs: storage/nfs.md
+    #       - HostPath: storage/hostpath.md
+    # - CI/CD:
+    #       - ArgoCD Setup: cicd/argocd.md
+    #       - Kustomize: kustomize/kustomize.md
+    # - Observability:
+    #       - Monitoring:
+    #             - Metrics-Server & Grafana: oberservability/monitoring/metrics-server.md
+    #             - Metrics-Server & TLS: oberservability/monitoring/metrics-tls.md
+    #       - Logging:
+    #             - Loki Stack: oberservability/logging/loki-stack.md
+    # - Development:
+    #       - Custom Resource Definitions: crds/simple-crd.md
+    # - Security:
+    #       - Host:
+    #             - Scan your Hosts (Nmap): security/nmap.md
+    #             - Firewall: security/firewall-ufw.md
+    #             - Firewall with Ansible: security/firewall-ansible.md
+    #       - Kubeconfig:
+    #             - Kubeconfig: security/kubeconfig.md
+    #       - general:
+    #             - Suricata: security/suricata.md
 plugins:
     - search # Enables search functionality
     - exporter:
