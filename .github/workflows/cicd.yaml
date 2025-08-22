@@ -10,7 +10,7 @@ on:
     paths:
       - 'mkdocs.yml'
       - 'docs/**'
-      - '.github/workflows/documentation.yaml'
+      - '.github/workflows/cicd.yaml'
   workflow_dispatch:
 
 permissions:
