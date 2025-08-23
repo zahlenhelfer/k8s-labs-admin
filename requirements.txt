@@ -5,3 +5,4 @@ mkdocs-print-site-plugin
 mkdocs-exporter
 playwright
 mkdocs-mermaid2-plugin
+mkdocs-git-revision-date-localized-plugin

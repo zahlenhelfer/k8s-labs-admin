@@ -40,6 +40,7 @@ nav:
 plugins:
     - search # Enables search functionality
     - mermaid2
+    - git-revision-date-localized
     - exporter:
           formats:
               pdf:
