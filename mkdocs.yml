@@ -14,8 +14,7 @@ plugins:
         - de
   - mermaid2
   - git-revision-date-localized
-  - literate-nav:
-      nav_file: nav.md
+  - awesome-nav
   - exporter:
       formats:
         pdf:

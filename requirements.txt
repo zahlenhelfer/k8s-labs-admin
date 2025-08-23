@@ -6,5 +6,5 @@ mkdocs-exporter
 playwright
 mkdocs-mermaid2-plugin
 mkdocs-git-revision-date-localized-plugin
-mkdocs-literate-nav
 mkdocs-minify-plugin
+mkdocs-awesome-nav
