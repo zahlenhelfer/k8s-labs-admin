@@ -1,4 +1,4 @@
-* [Item title](index.md)
-* Section title
-  * [Sub content](setup/content.md)
+* [Home](index.md)
+* Setup and Maintainance
+  * [Setup a Cluster](setup/cluster.md)
   * *.md

@@ -8,7 +8,10 @@ theme:
     - content.code.copy # Enables code copy feature
     - content.code.select # Enables code select feature
 plugins:
-  - search # Enables search functionality
+  - search: # Enables search functionality
+      lang:
+        - en
+        - de
   - mermaid2
   - git-revision-date-localized
   - literate-nav:
@@ -22,3 +25,5 @@ plugins:
           icon: material-file-download-outline
           enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
           attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
+  - minify:
+      minify_html: true
