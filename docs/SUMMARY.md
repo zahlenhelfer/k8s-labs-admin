@@ -1,4 +1,4 @@
 * [Home](index.md)
-* [Node-Setup]
+* Node-Setup
   * [Getting Started](setup/cluster.md)
   * [Ingress](setup/ingress.md)
