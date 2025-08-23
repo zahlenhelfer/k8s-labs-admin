@@ -15,7 +15,7 @@ plugins:
   - mermaid2
   - git-revision-date-localized
   - literate-nav:
-      nav_file: SUMMARY.md
+      nav_file: nav.md
   - exporter:
       formats:
         pdf:
