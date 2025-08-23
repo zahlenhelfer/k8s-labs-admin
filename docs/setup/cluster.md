@@ -37,3 +37,21 @@ k8s-node-0   Ready    control-plane   11m   v1.33.1
 - `bash k8sWorker.sh`
 - `sudo kubeadm join ...`
 - wechsel zur Control-Plane und wiederholtes: `kubectl get nodes`
+
+## Test
+
+```mermaid
+graph LR
+    hello --> world
+    world --> again
+    again --> hello
+```
+
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
+```
