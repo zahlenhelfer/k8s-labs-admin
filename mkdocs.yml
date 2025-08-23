@@ -2,23 +2,23 @@ site_name: k8s for Admins
 site_url: https://zahlenhelfer.github.io/k8s-for-admins/
 #theme: readthedocs
 theme:
-    name: material # Material theme for MkDocs
-    logo: img/k8s_logo.svg # Path to your logo file
-    features:
-        - content.code.copy # Enables code copy feature
-        - content.code.select # Enables code select feature
+  name: material # Material theme for MkDocs
+  logo: img/k8s_logo.svg # Path to your logo file
+  features:
+    - content.code.copy # Enables code copy feature
+    - content.code.select # Enables code select feature
 plugins:
-    - search # Enables search functionality
-    - mermaid2
-    - git-revision-date-localized
-      - literate-nav:
-        nav_file: SUMMARY.md
-    - exporter:
-          formats:
-              pdf:
-                  concurrency: 1
-          buttons:
-              - title: Download as PDF
-                icon: material-file-download-outline
-                enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
-                attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
+  - search # Enables search functionality
+  - mermaid2
+  - git-revision-date-localized
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - exporter:
+      formats:
+        pdf:
+          concurrency: 1
+      buttons:
+        - title: Download as PDF
+          icon: material-file-download-outline
+          enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
+          attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
