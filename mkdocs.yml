@@ -12,9 +12,9 @@ plugins:
       lang:
         - en
         - de
+  - awesome-nav
   - mermaid2
   - git-revision-date-localized
-  - awesome-nav
   - exporter:
       formats:
         pdf:
