@@ -7,6 +7,18 @@ theme:
   features:
     - content.code.copy # Enables code copy feature
     - content.code.select # Enables code select feature
+    - navigation.tracking # Enables navigation tracking feature
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 plugins:
   - search: # Enables search functionality
       lang:
