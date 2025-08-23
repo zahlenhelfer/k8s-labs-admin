@@ -1,4 +1,4 @@
-* [Home](index.md)
-* Setup
-  * [Getting Started](setup/cluster.md)
-  * [Ingress](setup/ingress.md)
+* [Item title](index.md)
+* Section title
+  * [Sub content](setup/content.md)
+  * *.md
