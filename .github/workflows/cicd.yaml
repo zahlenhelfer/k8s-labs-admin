@@ -25,18 +25,33 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetches all Git history (branches, tags, etc.)
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
 
+      - name: Cache Playwright browsers
+        id: cache-playwright
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       - name: Install dependencies
         run: |
-          pip install --upgrade pip && pip install -r requirements.txt
-          playwright install --with-deps
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          if [ -z "${{ steps.cache-playwright.outputs.cache-hit }}" ]; then
+            playwright install --with-deps
+          fi
 
       - name: Publish docs
         run: mkdocs gh-deploy --force
