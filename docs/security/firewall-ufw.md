@@ -195,3 +195,71 @@ nc -zv <control-plane-ip> 6443
 | kube-scheduler          | 10259         | ✗           |
 | kube-controller-manager | 10257         | ✗           |
 | NodePort services       | Optional      | 30000–32767 |
+
+---
+
+## Bash-Script for Control-Plane
+
+```bash
+#!/bin/bash
+set -e
+
+# Reset UFW rules
+sudo ufw --force reset
+
+# Default policies
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Common rules (for all nodes)
+sudo ufw allow 22/tcp              # SSH
+sudo ufw allow 8472/udp            # VXLAN (default Cilium overlay)
+sudo ufw allow 6081/udp            # Geneve (if you use it instead of VXLAN)
+sudo ufw allow 4240/tcp            # Cilium health endpoint
+sudo ufw allow 179/tcp             # BGP (optional, if used)
+
+# Control-plane specific ports
+sudo ufw allow 6443/tcp            # Kubernetes API server
+sudo ufw allow 2379:2380/tcp       # etcd
+sudo ufw allow 10250/tcp           # kubelet API
+sudo ufw allow 10259/tcp           # kube-scheduler
+sudo ufw allow 10257/tcp           # kube-controller-manager
+
+# NodePort range for NodePort Services
+sudo ufw allow 30000:32767/tcp
+
+# Enable UFW
+sudo ufw --force enable
+sudo ufw status verbose
+```
+## Bash-Script for Data-Plane
+
+```bash
+#!/bin/bash
+set -e
+
+# Reset UFW rules
+sudo ufw --force reset
+
+# Default policies
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Common rules (for all nodes)
+sudo ufw allow 22/tcp              # SSH
+sudo ufw allow 8472/udp            # VXLAN (default Cilium overlay)
+sudo ufw allow 6081/udp            # Geneve (if you use it instead of VXLAN)
+sudo ufw allow 4240/tcp            # Cilium health endpoint
+sudo ufw allow 179/tcp             # BGP (optional, if used)
+
+# Worker-specific ports
+sudo ufw allow 10250/tcp           # kubelet API
+
+# NodePort range for NodePort Services
+sudo ufw allow 30000:32767/tcp
+
+# Enable UFW
+sudo ufw --force enable
+sudo ufw status verbose
+
+```
