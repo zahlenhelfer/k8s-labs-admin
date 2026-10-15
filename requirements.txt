@@ -1,10 +1,2 @@
-mkdocs
-mkdocs-gen-files
-mkdocs-material
-mkdocs-print-site-plugin
-mkdocs-exporter
-playwright
-mkdocs-mermaid2-plugin
-mkdocs-git-revision-date-localized-plugin
-mkdocs-minify-plugin
-mkdocs-awesome-nav
+# Pinned: Zensical is pre-1.0, minor releases may change behaviour
+zensical==0.0.70

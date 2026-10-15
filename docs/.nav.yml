@@ -1,0 +1,11 @@
+nav:
+  - index.md
+  - Setup: setup
+  - Storage: storage
+  - CI/CD: cicd
+  - Kustomize: kustomize
+  - Compliance: compliance
+  - Observability: oberservability
+  - Development: crds
+  - Security: security
+  - Kubernetes Docs: https://kubernetes.io
