@@ -43,7 +43,6 @@ k8s-node-0   Ready    control-plane   11m   v1.33.1
 ```mermaid
 graph LR
     Worker-Node --> ControlPlane
-    Worker-Node --> ControlPlane
     ControlPlane --> Kubectl
 ```
 
