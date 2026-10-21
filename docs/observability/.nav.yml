@@ -1,0 +1,5 @@
+title: Observability
+nav:
+  - metrics-server.md
+  - metrics-tls.md
+  - loki-stack.md

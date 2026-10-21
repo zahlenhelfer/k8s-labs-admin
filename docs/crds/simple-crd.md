@@ -1,3 +1,7 @@
+---
+title: Simple CRD
+---
+
 # Lab: Create and Use a Custom Resource Definition (CRD)
 
 ## Goal

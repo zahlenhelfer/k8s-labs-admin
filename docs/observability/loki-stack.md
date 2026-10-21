@@ -1,3 +1,7 @@
+---
+title: Loki Stack
+---
+
 # Kubernetes Exercise: Deploy Loki Stack with Log Collector and Sample App
 
 ## Objectives

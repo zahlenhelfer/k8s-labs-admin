@@ -1,4 +1,8 @@
-# Installation eines zwei Node Kubernetes-Cluster
+---
+title: Two-Node Cluster
+---
+
+# Installing a Two-Node Kubernetes Cluster
 
 ## Login
 

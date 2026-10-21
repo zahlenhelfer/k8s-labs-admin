@@ -1,3 +1,7 @@
+---
+title: Metrics Server TLS
+---
+
 
 # 🔬 Lab: Deploy Metrics Server with Custom TLS SANs
 

@@ -1,3 +1,7 @@
+---
+title: NFS CSI
+---
+
 # CSI NFS Dynamic Provisioning Lab
 
 > Compatible with Minikube, Kind, or any Kubernetes 1.20+

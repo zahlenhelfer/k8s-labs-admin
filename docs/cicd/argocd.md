@@ -1,3 +1,7 @@
+---
+title: Argo CD
+---
+
 # Kubernetes Exercise: Deploy a Sample Application Using Argo CD (GitOps)
 
 ## Objectives

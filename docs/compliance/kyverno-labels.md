@@ -1,3 +1,7 @@
+---
+title: Kyverno Labels
+---
+
 
 # Lab: Deploy Kyverno and Enforce `costcenter` Label on Pods
 

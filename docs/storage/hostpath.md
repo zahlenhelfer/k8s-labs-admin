@@ -1,3 +1,7 @@
+---
+title: hostPath
+---
+
 # Kubernetes `hostPath` Lab
 
 ## Prerequisites

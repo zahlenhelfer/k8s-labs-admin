@@ -1,4 +1,8 @@
-# Übung: NGINX-Ingress-Controller installieren
+---
+title: NGINX Ingress
+---
+
+# Exercise: Install the NGINX Ingress Controller
 
 ## Schritt 1: Anlegen einer values.yaml Datei
 
