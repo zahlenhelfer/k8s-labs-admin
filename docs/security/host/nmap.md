@@ -1,3 +1,7 @@
+---
+title: Nmap Scan
+---
+
 # Exercise: Nmap Scan of a Kubernetes Server on Ubuntu 24.04
 
 ## Objective

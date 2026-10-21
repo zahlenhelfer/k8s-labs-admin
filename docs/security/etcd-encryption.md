@@ -1,3 +1,7 @@
+---
+title: etcd Encryption
+---
+
 # 🧪 Kubernetes Lab: Encrypting `etcd` for Secrets
 
 ## 🧰 Requirements

@@ -1,3 +1,7 @@
+---
+title: Users & kubeconfig
+---
+
 # 🔬 Lab: Create a Kubernetes User and Generate `kubeconfig`
 
 ## 🎯 Goal

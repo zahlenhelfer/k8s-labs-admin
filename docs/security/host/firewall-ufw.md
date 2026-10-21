@@ -1,3 +1,7 @@
+---
+title: Firewall (UFW)
+---
+
 
 # Exercise: Install and Configure Firewall for a Kubernetes Cluster (Ubuntu 24.04)
 

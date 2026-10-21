@@ -1,3 +1,7 @@
+---
+title: Firewall (Ansible)
+---
+
 # 🧪 Exercise: Firewall Setup with Ansible-Automation
 
 Here’s a complete **Ansible playbook** that configures a basic **UFW firewall** for a Kubernetes cluster with:

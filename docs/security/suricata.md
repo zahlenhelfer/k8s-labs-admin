@@ -1,3 +1,7 @@
+---
+title: Suricata IDS
+---
+
 
 # 🧪 Exercise: Install, Configure, and Test Suricata on Ubuntu 24.04
 

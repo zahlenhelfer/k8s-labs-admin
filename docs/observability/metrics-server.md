@@ -1,3 +1,7 @@
+---
+title: Metrics Server
+---
+
 # Lab: Kubernetes Metrics Pipeline
 
 **Goal:** Deploy `metrics-server` → Scrape with `Prometheus` → Visualize in `Grafana`

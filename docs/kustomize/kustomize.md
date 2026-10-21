@@ -1,3 +1,7 @@
+---
+title: Kustomize
+---
+
 
 # Lab: Using Kustomize with Kubernetes
 

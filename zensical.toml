@@ -19,7 +19,6 @@ features = [
   "content.action.edit",
   "navigation.tracking",
   "navigation.instant",
-  "navigation.sections",
   "navigation.indexes",
   "navigation.top",
   "navigation.footer",

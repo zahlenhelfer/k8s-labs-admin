@@ -1,0 +1,10 @@
+nav:
+  - index.md
+  - setup
+  - security
+  - storage
+  - observability
+  - compliance
+  - cicd
+  - kustomize
+  - crds
