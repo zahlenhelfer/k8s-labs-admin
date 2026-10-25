@@ -1,2 +1,2 @@
 # Pinned: Zensical is pre-1.0, minor releases may change behaviour
-zensical==0.0.70
+zensical==0.0.71
